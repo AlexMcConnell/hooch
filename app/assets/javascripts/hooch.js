@@ -239,7 +239,7 @@ var initHooch = function(){
       },
       load: function($modal_content,dismissable){
         this.$modal_content = $modal_content
-        this.dismissable = dismissable        
+        this.dismissable = dismissable
         this.arrangeContent()
         this.attachDismisser()
         this.disableScroll()
@@ -1261,7 +1261,7 @@ var initHooch = function(){
       handleScroll: function(){
         var sorter = this
         if(this.scroll_finished){
-          clearTimeout(this.scroll_finished);  
+          clearTimeout(this.scroll_finished);
         }
         this.scroll_finished = setTimeout(function(){
           sorter.setBoundaries()
@@ -1746,7 +1746,7 @@ var initHooch = function(){
         //////////////////////////////////////////
         if(sorter) this.sorter = sorter;
         $sort_element.data('hooch.SortElement', this)
-        this.$sort_element = $sort_element;        
+        this.$sort_element = $sort_element;
         this.reusable = $sort_element.data('sort-reusable')
         if(typeof(window.getComputedStyle) == 'function'){
           var computed_style = window.getComputedStyle(this.$sort_element[0])
@@ -1760,7 +1760,7 @@ var initHooch = function(){
           this.width = this.$sort_element.width()
           this.height = this.$sort_element.height()
         }
-        this.original_positioning = 
+        this.original_positioning =
           { position: this.$sort_element.css('position'),
             top: this.$sort_element.css('top'),
             left: this.$sort_element.css('left'),
@@ -1783,7 +1783,7 @@ var initHooch = function(){
       },
       onMousedown: function(e){
         if(this.disabled) return
-        hooch.pauseEvent(e)        
+        hooch.pauseEvent(e)
         if(1 == e.which){
           if(!this.pressed && !this.dragging && (!this.sorter || !this.sorter.dragging_element)){
             this.pressed = true
@@ -1856,7 +1856,7 @@ var initHooch = function(){
           var element_filters = this.element_filters
           return $.grep(current_sorters, function(sorter,i){
             return !sorter.matchesFilters(element_filters)
-          })       
+          })
         }
         return []
       },
@@ -2282,7 +2282,7 @@ var initHooch = function(){
       var tab_group = this.tab_group;
       this.ajax_loaded = true;
       this.$tab_trigger.data('ajax-target','[data-tab-id="' + this.tab_id + '"]')
-      new thin_man.AjaxLinkSubmission(this.$tab_trigger,{'on_complete': function(){tab_group.resize()}});
+      // new thin_man.AjaxLinkSubmission(this.$tab_trigger,{'on_complete': function(){tab_group.resize()}});
     },
     resize: function(){
       // noop
